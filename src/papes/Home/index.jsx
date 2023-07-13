@@ -1,4 +1,4 @@
 function Home() {
-    return <h2>Home pace</h2>
+    return <h4>Home pace</h4>
 }
 export default Home
