@@ -9,6 +9,7 @@
   box-shadow: 0px 1px 1px rgb(0 0 0/12%);
   display: flex;
   justify-content: center;
+  
 }
 .inner {
   height: 100%;
@@ -20,10 +21,7 @@
 
 .logo {
 }
-.search,
-.search-result {
-  width: 361px;
-}
+
 .search {
   position: relative;
   display: flex;
@@ -57,6 +55,10 @@
   &:focus-within {
     border-color: rgba(22, 24, 35, 0.06);
   }
+}
+.search,
+.search-result {
+  width: 361px;
 }
 .search-title {
   font-size: 1.4rem;

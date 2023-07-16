@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import Tippy from '@tippyjs/react/headless'
 
+import Button from '~/Component/Button';
 import images from '~/assets/images';
 import styles from './Header.module.scss';
 import SearchAcount from './SearchAcount'
@@ -25,9 +26,10 @@ function Header() {
                     <img src={images.logo} alt="Tiktok" />
                 </div>
                 <Tippy
+                    interactive
                     visible={searchResult.length > 0}
                     render={attrs => (
-                        <div className={cx('search-result')} tabIndex={-1}{...attrs}>
+                        <div className={cx('search-result')} tabIndex='-1'{...attrs}>
                             <PopperWappper>
                                 <h4 className={cx('search-title')}>
                                     Accounts
@@ -56,7 +58,8 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx('action')}>
-
+                    <Button text>Upload</Button >
+                    <Button primary disabled>Log In</Button >
                 </div>
             </div>
         </header >

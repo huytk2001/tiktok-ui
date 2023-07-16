@@ -1,35 +1,37 @@
-@import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,100&display=swap');
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,100&display=swap");
 
-:root{
-    --primary:#fe2c55;
-    --text-color:#333;
-    --black:#000;
+:root {
+    --primary: #fe2c55;
+    --text-color: #333;
+    --black: #000;
+    --white: #ffffff;
     //layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
     --default-layout-horizontal-spacer: 24px;
-    
 }
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;;
+    box-sizing: border-box;
 }
-html{
+html {
     font-size: 62.5%;
 }
-body{
-    font-family: 'Roboto','sans-sefif';
+body {
+    font-family: "Roboto", "sans-sefif";
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
 }
-button,input,[tabindex]{
+button,
+input,
+[tabindex] {
     outline: none;
     border: none;
 }
-a[href]{
-    color: var(--text-color) ;
+a[href] {
+    color: var(--text-color);
     text-decoration: none;
 }
