@@ -9,7 +9,6 @@
   box-shadow: 0px 1px 1px rgb(0 0 0/12%);
   display: flex;
   justify-content: center;
-  
 }
 .inner {
   height: 100%;
@@ -95,4 +94,7 @@
   &:active {
     background-color: rgba(22, 24, 35, 0.06);
   }
+}
+.custom-login {
+  color: red;
 }
