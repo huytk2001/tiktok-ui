@@ -3,9 +3,12 @@ import classNames from "classnames/bind";
 import styles from './Menu.module.scss'
 
 const cx = classNames.bind(styles)
-function MenuItem({ data }) {
+function MenuItem({ data, onClick }) {
+    const classes = cx('Menu-item', {
+        separata: data.separata,
+    });
     return (
-        <Button className={cx('Menu-item')} leftIcon={data.icon} to={data.to}>{data.title}</Button>
+        <Button className={classes} leftIcon={data.icon} to={data.to} onClick={onClick}>{data.title}</Button>
     );
 }
 

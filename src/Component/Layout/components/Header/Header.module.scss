@@ -13,6 +13,7 @@
 .inner {
   height: 100%;
   width: 1150px;
+  padding: 0 var(--default-layout-horizontal-spacer);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -103,5 +104,30 @@
   margin-left: 24px;
   background-color: transparent;
   padding: 4px 8px;
+  cursor: pointer;
+}
+// actions
+.action {
+  display: flex;
+  align-items: center;
+}
+.more-upload {
+  background-color: transparent;
+  font-size: 2.2rem;
+  color: #161823;
+}
+.action-btn {
+  background-color: transparent;
+  font-size: 2.2rem;
+  color: #161823;
+  cursor: pointer;
+  padding: 4px 12px;
+}
+.user-avt {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: 12px;
   cursor: pointer;
 }
