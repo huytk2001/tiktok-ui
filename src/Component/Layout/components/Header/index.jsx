@@ -7,6 +7,7 @@ import 'tippy.js/dist/tippy.css'
 import HeadLessTippy from '@tippyjs/react/headless'
 import Tippy from '@tippyjs/react/'
 
+import Images from '~/Component/Images'
 import Button from '~/Component/Button';
 import images from '~/assets/images';
 import styles from './Header.module.scss';
@@ -86,7 +87,7 @@ function Header() {
     const [searchResult, setSearchResult] = useState([])
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([])
+            setSearchResult([1])
         }, 0)
     }, [])
 
@@ -146,7 +147,7 @@ function Header() {
 
                     )}<Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuOnChange} >
                         {currentUser ? (
-                            <img src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-aiso/32c9ce145841da2605f79eb64291180b~c5_100x100.jpeg?biz_tag=tiktok_user.user_cover&x-expires=1689753600&x-signature=Abykr9d6%2BGHxykiQlg%2FDL4OSqzo%3D" className={cx('user-avt')} alt='thaonguyen' />
+                            <Images src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-aiso/32c9ce145841da2605f79eb64291180b~c5_100x100.jpeg?biz_tag=tiktok_user.user_cover&x-expires=1689753600&x-signature=Abykr9d6%2BGHxykiQlg%2FDL4OSqzo%3D" className={cx('user-avt')} alt='thaonguyen' />
 
                         ) : (
                             <button className={cx('more-btn')}>

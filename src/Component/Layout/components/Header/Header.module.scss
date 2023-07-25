@@ -60,6 +60,10 @@
 .search-result {
   width: 361px;
 }
+.search-result {
+  border-radius: var(--search-border-radius);
+  border: 1.5px solid transparent;
+}
 .search-title {
   font-size: 1.4rem;
   font-weight: 600;
