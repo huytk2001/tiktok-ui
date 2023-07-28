@@ -9,7 +9,7 @@ const cx = classNames.bind(styles)
 
 //khong truyen gia tri thi se nhan defaultfn
 const defaultFn = () => { }
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false, }) {
     const [history, setHistory] = useState([{ data: items }])
     const current = history[history.length - 1]
 
@@ -30,8 +30,11 @@ function Menu({ children, items = [], onChange = defaultFn }) {
     };
     return (
         <Tippy
+
             interactive
             delay={[0, 700]}
+            offset={[12, 8]}
+            hideOnClick={hideOnClick}
             placement='bottom-end'
             render={attrs => (
                 <div className={cx('Menu-list')} tabIndex='-1'{...attrs}>
@@ -40,13 +43,14 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                             // cắt từ phần tử số 0 đến phần tử gần cuối
                             setHistory(prev => prev.slice(0, prev.length - 1))
                         }} />}
-                        {renderItems()}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWappper>
                 </div>
 
             )}
             // Về trang dầu tiên :
             onHide={() => setHistory(prev => prev.slice(0, 1))}
+
         >
             {children}
         </Tippy >);

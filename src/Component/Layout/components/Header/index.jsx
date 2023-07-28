@@ -6,7 +6,7 @@ import { faEllipsisVertical, faEarthAmerica, faCircleQuestion, faKeyboard, faUse
 import 'tippy.js/dist/tippy.css'
 
 import Tippy from '@tippyjs/react/'
-
+import routesConfig from '~/config/routes';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/Component/Icon/Icon';
 import Images from '~/Component/Images'
 import Button from '~/Component/Button';
@@ -15,6 +15,7 @@ import styles from './Header.module.scss';
 import Search from '~/Component/Layout/Search'
 
 import Menu from '~/Component/Popper/Menu';
+import { Link } from 'react-router-dom';
 
 
 const cx = classNames.bind(styles);
@@ -29,6 +30,16 @@ const MENU_ITEMS = [
                 type: 'Language',
                 code: 'en',
                 title: 'English',
+            },
+            {
+                type: 'Language',
+                code: 'vi',
+                title: 'Vietnamese',
+            },
+            {
+                type: 'Language',
+                code: 'vi',
+                title: 'Vietnamese',
             },
             {
                 type: 'Language',
@@ -90,9 +101,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo')}>
                     <img src={images.logo} alt="Tiktok" />
-                </div>
+                </Link>
                 <Search />
                 {/*Seachr*/}
                 <div className={cx('action')}>
