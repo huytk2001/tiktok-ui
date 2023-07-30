@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import HeadLessTippy from '@tippyjs/react/headless'
 import SearchAcount from '../components/Header/SearchAcount';
-import * as searchService from '~/api-service/searchService'
+import * as searchService from '~/service/searchService'
 
 import { Wrapper as PopperWappper } from '~/Component/Popper/';
 import classNames from 'classnames/bind';
@@ -100,7 +100,7 @@ function Search() {
                         <SearchIcon />
                     </button>
                 </div>
-            </HeadLessTippy >;
+            </HeadLessTippy >
         </div>)
 }
 

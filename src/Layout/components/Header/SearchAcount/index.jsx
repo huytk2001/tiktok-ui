@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import Images from "~/Component/Images";
+import PropTypes from 'prop-types'
 const cx = classNames.bind(styles)
 
 function SearchAcount({ data }) {
@@ -19,6 +20,9 @@ function SearchAcount({ data }) {
             </div>
         </Link>
     );
+}
+SearchAcount.propTypes = {
+    data: PropTypes.object.isRequired
 }
 
 export default SearchAcount;

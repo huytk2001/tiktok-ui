@@ -5,6 +5,7 @@ import Tippy from '@tippyjs/react/headless'
 import MenuItem from './MenuItem'
 import Header from './Header'
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 const cx = classNames.bind(styles)
 
 //khong truyen gia tri thi se nhan defaultfn
@@ -39,10 +40,13 @@ function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false,
             render={attrs => (
                 <div className={cx('Menu-list')} tabIndex='-1'{...attrs}>
                     <PopperWappper className={cx('Menu-porper')}>
-                        {history.length > 1 && <Header title={"Language"} onBack={() => {
-                            // cắt từ phần tử số 0 đến phần tử gần cuối
-                            setHistory(prev => prev.slice(0, prev.length - 1))
-                        }} />}
+                        {history.length > 1 && (
+                            <Header
+                                title={current.title}
+                                onBack={() => {
+                                    // cắt từ phần tử số 0 đến phần tử gần cuối
+                                    setHistory(prev => prev.slice(0, prev.length - 1))
+                                }} />)}
                         <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWappper>
                 </div>
@@ -54,6 +58,12 @@ function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false,
         >
             {children}
         </Tippy >);
+}
+Menu.propTypes = {
+    children: PropTypes.node.isRequired,
+    items: PropTypes.array,
+    onChange: PropTypes.func,
+    hideOnClick: PropTypes.bool,
 }
 
 export default Menu;

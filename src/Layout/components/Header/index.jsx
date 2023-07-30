@@ -6,13 +6,13 @@ import { faEllipsisVertical, faEarthAmerica, faCircleQuestion, faKeyboard, faUse
 import 'tippy.js/dist/tippy.css'
 
 import Tippy from '@tippyjs/react/'
-import routesConfig from '~/config/routes';
+import Config from '~/config';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/Component/Icon/Icon';
 import Images from '~/Component/Images'
 import Button from '~/Component/Button';
 import images from '~/assets/images';
 import styles from './Header.module.scss';
-import Search from '~/Component/Layout/Search'
+import Search from '~/Layout/Search'
 
 import Menu from '~/Component/Popper/Menu';
 import { Link } from 'react-router-dom';
@@ -24,7 +24,7 @@ const MENU_ITEMS = [
         icon: <FontAwesomeIcon icon={faEarthAmerica} />,
         title: 'English',
         children: {
-
+            title: 'Language',
 
             data: [{
                 type: 'Language',
@@ -101,7 +101,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo')}>
+                <Link to={Config.home} className={cx('logo')}>
                     <img src={images.logo} alt="Tiktok" />
                 </Link>
                 <Search />

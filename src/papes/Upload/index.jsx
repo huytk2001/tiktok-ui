@@ -1,4 +1,4 @@
-import Header from "~/Component/Layout/components/Header"
+import Header from "~/Layout/components/Header"
 function Upload() {
     return <div>
         <Header />
