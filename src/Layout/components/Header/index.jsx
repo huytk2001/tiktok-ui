@@ -9,7 +9,7 @@ import Tippy from '@tippyjs/react/'
 import Config from '~/config';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/Component/Icon/Icon';
 import Images from '~/Component/Images'
-import Button from '~/Component/Button';
+import Button from '~/Component/Button/Button';
 import images from '~/assets/images';
 import styles from './Header.module.scss';
 import Search from '~/Layout/Search'

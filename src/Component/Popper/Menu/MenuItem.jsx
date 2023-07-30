@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import Button from "~/Component/Button";
+import Button from "~/Component/Button/Button";
 import classNames from "classnames/bind";
 import styles from './Menu.module.scss'
 
