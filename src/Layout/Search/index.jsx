@@ -14,10 +14,10 @@ const cx = classNames.bind(styles)
 function Search() {
     const [searchValue, setSearchValue] = useState('')
     const [searchResult, setSearchResult] = useState([])
-    const [showResult, setShowResult] = useState(true)
+    const [showResult, setShowResult] = useState(false)
     const [loading, setLoading] = useState(false)
 
-    const debounce = useDebouce(searchValue, 500)
+    const debouncedValue = useDebouce(searchValue, 500)
     const inputRef = useRef()
     const handleChange = (e) => {
         const searchValue = e.target.value
@@ -31,21 +31,21 @@ function Search() {
 
     // }
     useEffect(() => {
-        if (!debounce.trim()) {
+        if (!debouncedValue.trim()) {
             setSearchResult([])
             return
         }
         setLoading(true)
         const fetchApi = async () => {
             setLoading(true)
-            const result = await searchService.search(debounce)
+            const result = await searchService.search(debouncedValue)
             setSearchResult(result)
             setLoading(false)
         }
         fetchApi()
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [debounce])
+    }, [debouncedValue])
     const handleClear = () => {
         setSearchResult([''])
         setSearchValue('')
